@@ -11,14 +11,14 @@ resource "google_compute_network" "test_vpc" {
 resource "google_compute_subnetwork" "test_subnet" {
   name                     = "subnet1"
   ip_cidr_range            = "10.1.0.0/24"
-  region                   = "asia-southeast1"
+  region                   = "us-central1"
   network                  = google_compute_network.test_vpc.id
   private_ip_google_access = true
 }
 
 resource "google_compute_instance" "test_vm" {
   name         = "vm1"
-  zone         = "asia-southeast1-a"
+  zone         = "us-central1-a"
   machine_type = "n1-standard-1"
   allow_stopping_for_update = true
 
