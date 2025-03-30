@@ -1,1 +1,13 @@
-#my workflow file
+name: Terraform PROD Deployment
+
+on:
+  push:
+    branches:
+      - main
+  workflow_dispatch:
+    branches:
+      - main
+
+permissions:
+  contents: read
+  issues: write
