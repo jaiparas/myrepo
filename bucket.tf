@@ -2,8 +2,8 @@
 # location with Standard Storage
 
 resource "google_storage_bucket" "static" {
- name          = "BUCKET_NAME"
- location      = "US"
+ name          = "mybucket"
+ location      = "us-central1"
  storage_class = "STANDARD"
 
  uniform_bucket_level_access = true
@@ -13,8 +13,8 @@ resource "google_storage_bucket" "static" {
 # to the storage bucket
 
 resource "google_storage_bucket_object" "default" {
- name         = "OBJECT_NAME"
- source       = "OBJECT_PATH"
+ name         = "sample_file.txt"
+ source       = "./sample-file.txt"
  content_type = "text/plain"
  bucket       = google_storage_bucket.static.id
 }
